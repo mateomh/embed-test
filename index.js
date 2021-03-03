@@ -48,23 +48,23 @@ const clickButton = () => {
 
 const clickConfig = () => {
   console.log('Click config');
-  console.log(svcMca.tlb.api);
+  console.log(svcMca.tlb.api.getConfiguration);
   console.log('After');
   svcMca.tlb.api.getConfiguration('ALL', function (response) {
     console.log(response);
-    // if (response.result == 'success') {
-    //   alert('Success! Configuration is: ' + response.configuration);
-    // } else {
-    //   alert('Operation finished with error: ' + response.error);
-    // }
+    if (response.result == 'success') {
+      alert('Success! Configuration is: ' + response.configuration);
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
   });
   svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
     console.log(response);
-    // if (response.result == 'success') {
-    //   alert('Success! Feature disabled!');
-    // } else {
-    //   alert('Operation finished with error: ' + response.error);
-    // }
+    if (response.result == 'success') {
+      alert('Success! Feature disabled!');
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
   });
   // svcMca.tlb.api.readyForOperation();
   // svcMca.tlb.api.getConfiguration(ALL, null);
