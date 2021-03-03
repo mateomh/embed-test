@@ -47,6 +47,7 @@ const clickButton = () => {
 };
 
 const clickConfig = () => {
+  console.log('Click config');
   svcMca.tlb.api.getConfiguration('ALL', function (response) {
     console.log(response);
     // if (response.result == 'success') {
