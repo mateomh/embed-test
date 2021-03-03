@@ -12,6 +12,46 @@
 <body>
   <button onclick="clickButton()">LOAD JS</button>
   <button onclick="clickConfig()">CONFIG</button>
-  <div id="dynamicLoadScript"></div>
+  <script type="text/javascript" id="dynamicLoadScript">
+    (function() {
+        window.dynamicLoadCompleted = false;
+        window.staticLoadCompleted = false;
+        console.log("##DLS: Running DynamicLoadScript to load the Oracle API JS...");
+        function getParameterByName(name) {
+            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
+        var oraApiPath = '';
+        var oraOrigin = getParameterByName('oraParentFrame');
+        var oraApiSource = getParameterByName('oraApiSource');
+        console.log('##DLS: PageParameters - oraParentFrame: '+oraOrigin+' oraApiSource: '+oraApiSource);
+        try {                 
+            if (oraApiSource && oraApiSource.startsWith("http")) {
+                oraApiPath = oraApiSource; //handle case where apiSource is loaded from external CDN
+            } else {
+                oraApiPath = oraOrigin+oraApiSource;
+            }
+            console.log('##DLS: Oracle API JS URL: '+oraApiPath);     
+        } catch (e) {
+            console.log('##DLS: Error '+e);
+            console.error(e);
+        }
+        var currentNode = document.getElementById('dynamicLoadScript');
+        var node = document.createElement('script');
+        node.type = 'text/javascript';
+        node.charset = 'utf-8';
+        node.async = true;
+        node.src = oraApiPath;
+        node.addEventListener('load', function(evt) { 
+            window.dynamicLoadCompleted = true;
+            console.log('##DLS: Successfully loaded Oracle API JS');
+            // TODO INSERT ANY INIT PROCESSING HERE}, false);
+        });
+        node.addEventListener('error', function(evt) { 
+            console.log('##DLS: Error loading ORACLE API JS from URL: '+node.src);
+        }, false);
+        currentNode.parentNode.insertBefore(node, currentNode.nextSibling);
+    })();
+  </script>
 </body>
 </html>
