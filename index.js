@@ -69,7 +69,7 @@ const clickConfig = () => {
   // });
   // svcMca.tlb.api.readyForOperation();
   // svcMca.tlb.api.getConfiguration(ALL, null);
-  console.log('New New config');
+  console.log('New New New config');
   resp = svcMca.tlb.api.getConfiguration(function (configType, response) {
     console.log(configType);
 
