@@ -39,7 +39,7 @@ const clickButton = () => {
   node.addEventListener('error', function(evt) { 
       console.log('##DLS: Error loading ORACLE API JS from URL: '+node.src);
   }, false);
-  currentNode.innerHTML = '';
+  // currentNode.innerHTML = '';
   currentNode.appendChild(node);
   // currentNode.parentNode.insertBefore(node, currentNode.nextSibling);
   // console.log('loaded');
