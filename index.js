@@ -104,4 +104,5 @@ const clickConfig = () => {
       alert('Could not getConfiguration. finished with error: ' + configType.error);
     }
   });
+  console.log('End config');
 };
