@@ -49,6 +49,7 @@ const clickButton = () => {
 const clickConfig = () => {
   console.log('Click config');
   console.log(svcMca.tlb.api);
+  console.log('After');
   svcMca.tlb.api.getConfiguration('ALL', function (response) {
     console.log(response);
     // if (response.result == 'success') {
