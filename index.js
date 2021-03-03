@@ -70,8 +70,8 @@ const clickConfig = () => {
   // svcMca.tlb.api.readyForOperation();
   // svcMca.tlb.api.getConfiguration(ALL, null);
   console.log('New config');
-  alert('from the iframe2');
-  svcMca.tlb.api.getConfiguration(() => console.log('hola'));
+  alert('from the iframe3');
+  svcMca.tlb.api.getConfiguration();
   // resp = svcMca.tlb.api.getConfiguration(function (configType, response) {
   //   console.log(configType);
 
