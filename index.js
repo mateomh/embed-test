@@ -51,6 +51,8 @@ const clickConfig = () => {
   console.log(svcMca.tlb.api);
   console.log(svcMca.tlb.api.getConfiguration);
   console.log('After');
+  const scripts = document.getElementsByTagName('script');
+  console.log(scripts);
   // svcMca.tlb.api.getConfiguration('ALL', function (response) {
   //   console.log(response);
   //   if (response.result == 'success') {
