@@ -52,7 +52,7 @@ const clickConfig = () => {
   console.log(svcMca.tlb.api.getConfiguration);
   console.log('After');
   const scripts = document.getElementsByTagName('script');
-  console.log(scripts[0].innerText);
+  console.log(scripts[0]);
   // svcMca.tlb.api.getConfiguration('ALL', function (response) {
   //   console.log(response);
   //   if (response.result == 'success') {
@@ -72,7 +72,7 @@ const clickConfig = () => {
   // svcMca.tlb.api.readyForOperation();
   // svcMca.tlb.api.getConfiguration(ALL, null);
   console.log('New config');
-  alert('from the iframe6');
+  alert('from the iframe7');
   svcMca.tlb.api.getConfiguration(() => console.log('hola'));
   fetch('https://pokeapi.co/api/v2/pokemon/').then(res => console.log(res));
   // resp = svcMca.tlb.api.getConfiguration(function (configType, response) {
