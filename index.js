@@ -52,7 +52,7 @@ const clickConfig = () => {
   console.log(svcMca.tlb.api.getConfiguration);
   console.log('After');
   const scripts = document.getElementsByTagName('script');
-  console.log(scripts[0].innerHTML);
+  console.log(scripts[0].innerText);
   // svcMca.tlb.api.getConfiguration('ALL', function (response) {
   //   console.log(response);
   //   if (response.result == 'success') {
