@@ -115,3 +115,7 @@ const clickConfig = () => {
   // console.log(resp);
   console.log('End config');
 };
+
+const clickConfigDocument = () => {
+  console.log('Official documentation actions');
+}
