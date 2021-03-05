@@ -72,7 +72,7 @@ const clickConfig = () => {
   // svcMca.tlb.api.readyForOperation();
   // svcMca.tlb.api.getConfiguration(ALL, null);
   console.log('New config');
-  alert('from the iframe8');
+  alert('from the iframe9');
   svcMca.tlb.api.getConfiguration(() => console.log('hola'));
   fetch('https://pokeapi.co/api/v2/pokemon/').then(res => console.log(res));
   // resp = svcMca.tlb.api.getConfiguration(function (configType, response) {

@@ -438,7 +438,7 @@
           //   }
           // },
           // callback);
-          console.log('hola');
+          console.log(global);
         },
         readyForOperation : function (readiness, callback) {
           core.processCall( {
