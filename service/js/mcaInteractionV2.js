@@ -430,7 +430,7 @@
           },
           callback);
         },
-        getConfiguration : function (configType, callback2) {
+        getConfiguration : function (callback2) {
           const callback = () => {console.log('hola')};
           if (typeof callback === 'undefined') {
               callback = configType;
