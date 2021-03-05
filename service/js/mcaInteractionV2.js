@@ -438,7 +438,8 @@
           //   }
           // },
           // callback);
-          console.log(global);
+          // console.log(global);
+          callback();
         },
         readyForOperation : function (readiness, callback) {
           core.processCall( {
