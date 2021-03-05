@@ -10,14 +10,17 @@
   <script src="./index.js"></script>
   <script type="text/javascript">
     function callGetConfiguration() {
-      console.log('Documentation configuration')
+      console.log('Documentation configuration');
+      console.log(svcMca.tlb.api);
+      console.log('Get configuration called');
       svcMca.tlb.api.getConfiguration(function (response) {
         if (response.result == 'success') {
           alert('Success! Configuration is: ' + response.configuration);
         } else {
           alert('Operation finished with error: ' + response.error);
         }
-      }, () => {console.log('hola')});
+      });
+      console.log('Get configuration passed');
     }
   </script>
 </head>
