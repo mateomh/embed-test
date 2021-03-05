@@ -404,6 +404,7 @@
       agentCommandPrototype : toolbarAgentCmd,
       api :  {
         disableFeature : function (features, callback) {
+          const callback = () => {console.log('hola')}; 
           core.processCall( {
             method : core.apiMethod.DISABLE_FEATURE, version : version, data :  {
               features : features
@@ -412,6 +413,7 @@
           callback);
         },
         setToolbarDimensions : function (barType, height, width, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.SET_TOOLBAR_DIMENSIONS, version : version, data :  {
               barType: barType, height : height, width: width
@@ -420,6 +422,7 @@
           callback);
         },
         getDisplayState : function (barType, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.GET_DISPLAY_STATE, version : version, data :  {
               barType: barType
@@ -428,20 +431,22 @@
           callback);
         },
         getConfiguration : function (configType, callback) {
-          // if (typeof callback === 'undefined') {
-          //     callback = configType;
-          //     configType = null;
-          // }
-          // core.processCall( {
-          //   method : core.apiMethod.GET_CONFIGURATION, version : version, data :  {
-          //       configType: configType
-          //   }
-          // },
-          // callback);
-          // console.log(global);
-          callback();
+          const callback = () => {console.log('hola')};
+          if (typeof callback === 'undefined') {
+              callback = configType;
+              configType = null;
+          }
+          core.processCall( {
+            method : core.apiMethod.GET_CONFIGURATION, version : version, data :  {
+                configType: configType
+            }
+          },
+          callback);
+          console.log(global);
+          // callback;
         },
         readyForOperation : function (readiness, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.READY_FOR_OPERATION, version: version, data : {
               readiness : readiness
@@ -450,6 +455,7 @@
           callback);
         },
         newCommEvent : function (channel, appClassification, eventId, inData, lookupObject, callback, channelType) {
+          const callback = () => {console.log('hola')};
           if ((typeof callback === 'undefined') && (typeof channelType === 'undefined')) {
               callback = lookupObject;
               lookupObject = null;
@@ -470,6 +476,7 @@
           callback);
         },
         startCommEvent : function (channel, appClassification, eventId, inData, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.START_COMM_EVENT, version : version, data :  {
               channel : channel, appClassification : appClassification, eventId : eventId, inData : inData, channelType : channelType
@@ -478,6 +485,7 @@
           callback);
         },
         getCustomerData : function (channel, appClassification, eventId, inData, lookupObject, callback, channelType) {
+          const callback = () => {console.log('hola')};
           if (typeof callback === 'undefined') {
               callback = lookupObject;
               lookupObject = null;
@@ -490,6 +498,7 @@
           callback);
         },
         invokeScreenPop : function (channel, appClassification, eventId, pageCode, pageData, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.INVOKE_SCREEN_POP, version : version, data :  {
               channel : channel, appClassification : appClassification, eventId : eventId, pageCode: pageCode, inData : pageData, channelType : channelType
@@ -498,6 +507,7 @@
           callback);
         },
         closeCommEvent : function (channel, appClassification, eventId, inData, reason, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.CLOSE_COMM_EVENT, version : version, data :  {
               channel : channel, appClassification : appClassification, eventId : eventId, inData : inData, reason : reason, channelType : channelType
@@ -506,6 +516,7 @@
           callback);
         },
         transferCommEvent : function (channel, appClassification, eventId, inData, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.TRANSFER_COMM_EVENT, version : version, data :  {
               channel : channel, appClassification : appClassification, eventId : eventId, inData : inData, channelType : channelType
@@ -514,6 +525,7 @@
           callback);
         },
         conferenceCommEvent : function (channel, appClassification, eventId, inData, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.CONFERENCE_COMM_EVENT, version : version, data :  {
               channel : channel, appClassification : appClassification, eventId : eventId, inData : inData, channelType : channelType
@@ -522,6 +534,7 @@
           callback);
         },
         setCommEventTranscript : function (channel, appClassification, eventId, inData, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.SET_COMM_EVENT_TRANSCRIPT, version : version, data :  {
               channel : channel, appClassification : appClassification, eventId : eventId, inData : inData, channelType : channelType
@@ -530,6 +543,7 @@
           callback);
         },
         upgradeCommEvent : function (channel, eventId, channelType, upgradeChannel, upgradeChannelType, upgradeEventId, inData, callback ) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.UPGRADE_COMM_EVENT, version : version, data :  {
               channel : channel, channelType : channelType, upgradeChannel : upgradeChannel, upgradeChannelType : upgradeChannelType, upgradeEventId : upgradeEventId, eventId : eventId, inData : inData
@@ -538,6 +552,7 @@
           callback);
         },
         downgradeCommEvent : function (channel, eventId, channelType, downgradeChannel, downgradeChannelType, downgradeEventId, inData, callback ) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.DOWNGRADE_COMM_EVENT, version : version, data :  {
               channel : channel, eventId : eventId, channelType : channelType, downgradeChannel : downgradeChannel, downgradeChannelType : downgradeChannelType, downgradeEventId : downgradeEventId, inData : inData
@@ -546,6 +561,7 @@
           callback);
         },
         onOutgoingEvent : function (channel, appClassification, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.ON_OUTGOING_EVENT, version : version, data :  {
               channel : channel, appClassification : appClassification, channelType : channelType
@@ -562,6 +578,7 @@
 //            callback);
 //          },
         outboundCommError: function (channel, commUuid, errorCode, errorMsg, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.OUTBOUND_COMM_ERROR, version : version, data :  {
               channel : channel, commUuid : commUuid, errorCode : errorCode, errorMsg : errorMsg, channelType : channelType
@@ -570,6 +587,7 @@
           callback);
         },
         onDataUpdated : function (channel, appClassification, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.ON_DATA_UPDATED, version : version, data :  {
               channel : channel, appClassification : appClassification, channelType : channelType
@@ -578,6 +596,7 @@
           callback);
         },
         openFloatingToolbar : function (barType, url, height, width, inData, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.OPEN_FLOATING_TOOLBAR, version : version, data : {
               barType: barType, url: url, height: height, width: width, inData : inData
@@ -586,6 +605,7 @@
           callback);
         },
         isFloatingToolbarOpen : function (barType, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.IS_FLOATING_TOOLBAR_OPEN, version : version, data : {
               barType: barType
@@ -594,6 +614,7 @@
           callback);          
         },
         closeFloatingToolbar : function (barType, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.CLOSE_FLOATING_TOOLBAR, version : version, data : {
               barType: barType
@@ -602,6 +623,7 @@
           callback);          
         },
         openCompanionPanel : function (panelType, url, title, inData, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.OPEN_COMPANION_PANEL, version : version, data : {
               panelType: panelType, url: url, title: title, inData : inData
@@ -610,6 +632,7 @@
           callback);
         },
         isCompanionPanelOpen : function (panelType, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.IS_COMPANION_PANEL_OPEN, version : version, data : {
               panelType: panelType
@@ -618,6 +641,7 @@
           callback);          
         },
         closeCompanionPanel : function (panelType, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.CLOSE_COMPANION_PANEL, version : version, data : {
               panelType: panelType
@@ -626,6 +650,7 @@
           callback);          
         },
         postToolbarMessage : function (messagePayload, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.POST_TOOLBAR_MESSAGE, version : version, data : {
                     messagePayload : messagePayload
@@ -634,12 +659,14 @@
           callback);          
         },
         onToolbarMessage : function (callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.ON_TOOLBAR_MESSAGE, version : version, data : {}
           },
           callback);          
         },
         agentStateEvent : function (channel, eventId, isAvailable, isLoggedIn, stateCd, stateDisplayString, reasonCd, reasonDisplayString, inData, callback, channelType) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.AGENT_STATE_EVENT, version : version, data :  {
               channel:channel, eventId:eventId, isAvailable:isAvailable, isLoggedIn:isLoggedIn, stateCd:stateCd, stateDisplayString:stateDisplayString, reasonCd:reasonCd, reasonDisplayString:reasonDisplayString, inData:inData, channelType:channelType
@@ -648,6 +675,7 @@
           callback);
         },
         onToolbarInteractionCommand : function (executor) {
+          const callback = () => {console.log('hola')};
           core.validateExecutor(core.apiMethod.ON_TOOLBAR_INTERACTION_COMMAND,executor);
           core.processCall( {
             method : core.apiMethod.ON_TOOLBAR_INTERACTION_COMMAND, version : version, data : {}
@@ -655,6 +683,7 @@
           executor);   
         },
         onToolbarAgentCommand : function (channel, channelType, executor) {
+          const callback = () => {console.log('hola')};
           core.validateExecutor(core.apiMethod.ON_TOOLBAR_AGENT_COMMAND,executor);
           core.processCall( {
             method : core.apiMethod.ON_TOOLBAR_AGENT_COMMAND, version : version, data : {channel:channel,channelType:channelType}
@@ -662,6 +691,7 @@
           executor);   
         },
         focusCommEvent : function (eventId, channel, channelType, inData, callback) {
+          const callback = () => {console.log('hola')};
           core.processCall( {
             method : core.apiMethod.FOCUS_COMM_EVENT, version : version, data :  {
               eventId:eventId, channel:channel, channelType:channelType, inData:inData
