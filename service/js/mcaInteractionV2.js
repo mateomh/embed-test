@@ -442,6 +442,7 @@
             }
           },
           callback);
+          console.log('Functions');
           console.log(global);
           console.log(callback);
           console.log(callback2);
