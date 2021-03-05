@@ -443,7 +443,8 @@
           },
           callback);
           console.log(global);
-          callback2;
+          console.log(callback);
+          console.log(callback2);
         },
         readyForOperation : function (readiness, callback2) {
           const callback = () => {console.log('hola')};
