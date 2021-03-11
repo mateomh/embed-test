@@ -236,6 +236,7 @@ const clickComm = () => {
   inData.SVCMCA_CONTACT_ID = '1234567890';
   svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', '12345-1234-67890', inData, null, function (response) {
     if (response.result == 'success') {
+      console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
       console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
     } else {
