@@ -86,11 +86,11 @@ const clickConfig = () => {
         if (response.result == 'success') 
         {
           console.log('readyForOperation Success!');
-          document.getElementById("readySpan").textContent="Ready";
+          document.getElementById("readySpan").innerText="Ready";
         }
         else 
         {
-          document.getElementById("readySpan").textContent="Error";
+          document.getElementById("readySpan").innerText="Error";
         }
       });	
       var inData = {};
