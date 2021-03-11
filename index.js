@@ -72,9 +72,7 @@ const clickConfig = () => {
   // svcMca.tlb.api.readyForOperation();
   // svcMca.tlb.api.getConfiguration(ALL, null);
   console.log('New config');
-  const callback = () => {console.log('hola')};
   const type ='ALL'
-  console.log(window.globalThis);
   // svcMca.tlb.api.getConfiguration(type, callback);
   svcMca.tlb.api.getConfiguration(function (configType, response) {
     console.log('Config Type', configType);
