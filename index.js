@@ -149,8 +149,69 @@ const clickFeature = () => {
   console.log('END DISABLE FEATURE');
 };
 
-const clickListeners = () => {
+const interactionCommandExecutor = (command) => {
+  switch(command.command) {
+    case "accept":
+      alert("Received accept command");
+      break;
+    case "reject":
+      alert("Received reject command");
+      break;
+    case "setActive":
+      alert("Received setActive command");
+      break;
+  }
+  command.result = 'success';
+  command.sendResponse(command); 
+}
 
+const agentCommandExecutor = (command) => {
+  var cmd = command.command;
+  switch(cmd) {
+     case "getCurrentAgentState":
+        command.outData = {
+           'channel':command.channel,
+           'channelType':command.channelType,
+           'isAvailable':true,
+           'isLoggedIn':true,
+           'state':"AVAILABLE",
+           'stateDisplayString':"Available",
+           'reason':null,
+           'reasonDisplayString':null};
+        break;
+     case "getActiveEngagements":
+        command.outData = {'activeCount':1,'engagements' : [ {eventId:"1234"} ] };
+        break;
+     case "makeAvailable":
+        alert("makeAvailable command invoked");
+        break;
+     case "makeUnavailable":
+        alert("makeUnavailable command invoked");
+  }
+  command.result = 'success';
+  command.sendResponse(command);
+}
+
+const clickListeners = () => {
+  const channel = 'PHONE';
+  const classification = 'ORA_SERVICE';
+  const channelType = 'ORA_SVC_PHONE';
+  // ON DATA UPDATED
+  svcMca.tlb.api.onDataUpdated(channel,classification, (resp) => {
+    console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
+  }, channelType);
+  // ON OUTGOING EVENT
+  svcMca.tlb.api.onOutgoingEvent(channel,classification, (resp) => {
+    console.log('THIS IS THE OUTGOING EVENT CALLBACK', resp);
+  }, channelType);
+  // ON TOOLBAR MESSAGE
+  svcMca.tlb.api.onToolbarMessage((resp) => {
+    console.log('THIS IS THE TOOLBAR MESSAGE', resp);
+  });
+  // ON TOOLBAR INTERACTION COMMAND
+  svcMcaTlb.api.onToolbarInteractionCommand(interactionCommandExecutor);
+  // ON TOOLBAR AGENT COMMAND
+  svcMcaTlb.api.onToolbarAgentCommand(channel, channelType, agentCommandExecutor);
 };
 
 const clickReady = () => {
