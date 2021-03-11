@@ -134,7 +134,7 @@ const clickConfig = () => {
       alert('Could not getConfiguration. finished with error: ' + response.error);
     }
   });
-  console.log('END CONFIG');
+  console.log('WAIT FOR CONFIG RESPONSE');
 };
 
 const clickFeature = () => {
@@ -146,7 +146,7 @@ const clickFeature = () => {
       console.log('Operation finished with error: ' + response.error);
     }
   });
-  console.log('END DISABLE FEATURE');
+  console.log('WAIT FOR DISABLE FEATURE RESPONSE');
 };
 
 const interactionCommandExecutor = (command) => {
@@ -212,6 +212,7 @@ const clickListeners = () => {
   svcMca.tlb.api.onToolbarInteractionCommand(interactionCommandExecutor);
   // ON TOOLBAR AGENT COMMAND
   svcMca.tlb.api.onToolbarAgentCommand(channel, channelType, agentCommandExecutor);
+  console.log('WAIT FOR LISTENERS REGISTRATION RESPONSE');
 };
 
 const clickReady = () => {
@@ -227,7 +228,7 @@ const clickReady = () => {
       // document.getElementById("readySpan").innerText="Error";
     }
   });
-  console.log('END READY FOR OPERATION');
+  console.log('WAIT FOR READY RESPONSE');
 };
 
 const clickComm = () => {
@@ -243,7 +244,7 @@ const clickComm = () => {
       alert('Operation finished with error: ' + response.error);
     }
   },'ORA_SVC_PHONE');
-  console.log('END NEW COMM EVENT');
+  console.log('WAIT FOR NEW COMM EVENT RESPONSE');
 };
 
 const clickStartComm = () => {
@@ -259,7 +260,7 @@ const clickStartComm = () => {
       alert('Operation finished with error: ' + response.error);
     }
   },'ORA_SVC_PHONE');
-  console.log('END START COMM EVENT');
+  console.log('WAIT FOR START COMM WINDOW POPUP');
 };
 
 const clickConfigDocument = () => {
