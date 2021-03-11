@@ -46,71 +46,142 @@ const clickButton = () => {
   // currentNode.parentNode.insertBefore(node, currentNode.nextSibling);
 };
 
-const clickConfig = () => {
-  console.log('Click config');
-  console.log(svcMca.tlb.api);
-  console.log(svcMca.tlb.api.getConfiguration);
-  console.log('After');
-  const scripts = document.getElementsByTagName('script');
-  console.log(scripts[3]);
-  // svcMca.tlb.api.getConfiguration('ALL', function (response) {
-  //   console.log(response);
-  //   if (response.result == 'success') {
-  //     alert('Success! Configuration is: ' + response.configuration);
-  //   } else {
-  //     alert('Operation finished with error: ' + response.error);
-  //   }
-  // });
-  // svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
-  //   console.log(response);
-  //   if (response.result == 'success') {
-  //     alert('Success! Feature disabled!');
-  //   } else {
-  //     alert('Operation finished with error: ' + response.error);
-  //   }
-  // });
-  // svcMca.tlb.api.readyForOperation();
-  // svcMca.tlb.api.getConfiguration(ALL, null);
-  console.log('New config');
-  const type ='ALL'
-  // svcMca.tlb.api.getConfiguration(type, callback);
-  svcMca.tlb.api.getConfiguration('ALL', (configType, response) => {
-    console.log('Config Type', configType);
+// const clickConfig = () => {
+//   console.log('Click config');
+//   console.log(svcMca.tlb.api);
+//   console.log(svcMca.tlb.api.getConfiguration);
+//   console.log('After');
+//   const scripts = document.getElementsByTagName('script');
+//   console.log(scripts[3]);
+//   // svcMca.tlb.api.getConfiguration('ALL', function (response) {
+//   //   console.log(response);
+//   //   if (response.result == 'success') {
+//   //     alert('Success! Configuration is: ' + response.configuration);
+//   //   } else {
+//   //     alert('Operation finished with error: ' + response.error);
+//   //   }
+//   // });
+//   // svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
+//   //   console.log(response);
+//   //   if (response.result == 'success') {
+//   //     alert('Success! Feature disabled!');
+//   //   } else {
+//   //     alert('Operation finished with error: ' + response.error);
+//   //   }
+//   // });
+//   // svcMca.tlb.api.readyForOperation();
+//   // svcMca.tlb.api.getConfiguration(ALL, null);
+//   console.log('New config');
+//   const type ='ALL'
+//   // svcMca.tlb.api.getConfiguration(type, callback);
+//   svcMca.tlb.api.getConfiguration(type, (configType, response) => {
+//     console.log('Config Type', configType);
 
-    if (configType.result == 'success') 
+//     if (configType.result == 'success') 
+//     {			  
+//       console.log('getConfiguration is success. Response is: ', response);
+//       svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
+//           console.log(response);
+//           if (response.result == 'success') {
+//             alert('Success! Feature disabled!');
+//           } else {
+//             alert('Operation finished with error: ' + response.error);
+//           }
+//         });
+//       svcMca.tlb.api.readyForOperation(true, function (response) {
+//         if (response.result == 'success') 
+//         {
+//           console.log('readyForOperation Success!');
+//           // document.getElementById("readySpan").innerText="Ready";
+//         }
+//         else 
+//         {
+//           console.log('No Operation. ERROR!!!!!');
+//           // document.getElementById("readySpan").innerText="Error";
+//         }
+//       });	
+//       var inData = {};
+//       inData.SVCMCA_ANI = '5551234';
+//       inData.SVCMCA_CONTACT_ID = '1234567890';
+//       svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', '12345-1234-67890', inData, null, function (response) {
+//         if (response.result == 'success') {
+//           console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+//           console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
+//         } else {
+//           alert('Operation finished with error: ' + response.error);
+//         }
+//       },'ORA_SVC_PHONE');
+//     } 
+//     else 
+//     {
+//       alert('Could not getConfiguration. finished with error: ' + configType.error);
+//     }
+//   });
+//   console.log('End config');
+// };
+
+const clickConfig = () => {
+  const type ='ALL';
+  svcMca.tlb.api.getConfiguration(type, (response) => {
+    console.log('Config Type', response);
+
+    if (response.result == 'success') 
     {			  
       console.log('getConfiguration is success. Response is: ', response);
-      svcMca.tlb.api.readyForOperation(true, function (response) {
-        if (response.result == 'success') 
-        {
-          console.log('readyForOperation Success!');
-          // document.getElementById("readySpan").innerText="Ready";
-        }
-        else 
-        {
-          console.log('No Operation. ERROR!!!!!');
-          // document.getElementById("readySpan").innerText="Error";
-        }
-      });	
-      var inData = {};
-      inData.SVCMCA_ANI = '5551234';
-      inData.SVCMCA_CONTACT_ID = '1234567890';
-      svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', '12345-1234-67890', inData, null, function (response) {
-        if (response.result == 'success') {
-          console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
-          console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
-        } else {
-          alert('Operation finished with error: ' + response.error);
-        }
-      },'ORA_SVC_PHONE');
     } 
     else 
     {
-      alert('Could not getConfiguration. finished with error: ' + configType.error);
+      alert('Could not getConfiguration. finished with error: ' + response.error);
     }
   });
-  // console.log(resp);
-  console.log('End config');
+  console.log('END CONFIG');
+};
+
+const clickFeature = () => {
+  svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
+    console.log(response);
+    if (response.result == 'success') {
+      alert('Success! Feature disabled!');
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  });
+  console.log('END DISABLE FEATURE');
+};
+
+const clickListeners = () => {
+
+};
+
+const clickReady = () => {
+  svcMca.tlb.api.readyForOperation(true, function (response) {
+    if (response.result == 'success') 
+    {
+      console.log('readyForOperation Success!');
+      // document.getElementById("readySpan").innerText="Ready";
+    }
+    else 
+    {
+      console.log('No Operation. ERROR!!!!!');
+      // document.getElementById("readySpan").innerText="Error";
+    }
+  });
+  console.log('END READY FOR OPERATION');
+};
+
+const clickComm = () => {
+  var inData = {};
+  inData.SVCMCA_ANI = '5551234';
+  inData.SVCMCA_CONTACT_ID = '1234567890';
+  svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', '12345-1234-67890', inData, null, function (response) {
+    if (response.result == 'success') {
+      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  },'ORA_SVC_PHONE');
+  console.log('END COMM EVENT');
 };
 
 const clickConfigDocument = () => {
