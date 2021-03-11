@@ -77,7 +77,7 @@ const clickConfig = () => {
   console.log(window.globalThis);
   // svcMca.tlb.api.getConfiguration(type, callback);
   svcMca.tlb.api.getConfiguration(function (configType, response) {
-    console.log(configType);
+    console.log('Config Type', configType);
 
     if (configType.result == 'success') 
     {			  
@@ -86,11 +86,12 @@ const clickConfig = () => {
         if (response.result == 'success') 
         {
           console.log('readyForOperation Success!');
-          document.getElementById("readySpan").innerText="Ready";
+          // document.getElementById("readySpan").innerText="Ready";
         }
         else 
         {
-          document.getElementById("readySpan").innerText="Error";
+          console.log('No Operation. ERROR!!!!!');
+          // document.getElementById("readySpan").innerText="Error";
         }
       });	
       var inData = {};
