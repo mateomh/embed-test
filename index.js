@@ -74,7 +74,7 @@ const clickConfig = () => {
   console.log('New config');
   const type ='ALL'
   // svcMca.tlb.api.getConfiguration(type, callback);
-  svcMca.tlb.api.getConfiguration(function (configType, response) {
+  svcMca.tlb.api.getConfiguration('ALL', (configType, response) => {
     console.log('Config Type', configType);
 
     if (configType.result == 'success') 
@@ -108,7 +108,7 @@ const clickConfig = () => {
     {
       alert('Could not getConfiguration. finished with error: ' + configType.error);
     }
-  },'ALL');
+  });
   // console.log(resp);
   console.log('End config');
 };
