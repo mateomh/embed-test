@@ -79,7 +79,7 @@ const clickConfig = () => {
 
     if (configType.result == 'success') 
     {			  
-      console.log('getConfiguration is success. Response is: ' + JSON.stringify(configType));
+      console.log('getConfiguration is success. Response is: ', response);
       svcMca.tlb.api.readyForOperation(true, function (response) {
         if (response.result == 'success') 
         {
