@@ -141,9 +141,9 @@ const clickFeature = () => {
   svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
     console.log(response);
     if (response.result == 'success') {
-      alert('Success! Feature disabled!');
+      console.log('Success! Feature disabled!');
     } else {
-      alert('Operation finished with error: ' + response.error);
+      console.log('Operation finished with error: ' + response.error);
     }
   });
   console.log('END DISABLE FEATURE');
@@ -209,9 +209,9 @@ const clickListeners = () => {
     console.log('THIS IS THE TOOLBAR MESSAGE', resp);
   });
   // ON TOOLBAR INTERACTION COMMAND
-  svcMcaTlb.api.onToolbarInteractionCommand(interactionCommandExecutor);
+  svcMca.tlb.api.onToolbarInteractionCommand(interactionCommandExecutor);
   // ON TOOLBAR AGENT COMMAND
-  svcMcaTlb.api.onToolbarAgentCommand(channel, channelType, agentCommandExecutor);
+  svcMca.tlb.api.onToolbarAgentCommand(channel, channelType, agentCommandExecutor);
 };
 
 const clickReady = () => {
