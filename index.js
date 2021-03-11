@@ -108,7 +108,7 @@ const clickConfig = () => {
     {
       alert('Could not getConfiguration. finished with error: ' + configType.error);
     }
-  });
+  },'ALL');
   // console.log(resp);
   console.log('End config');
 };
