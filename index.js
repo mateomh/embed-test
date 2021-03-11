@@ -243,7 +243,23 @@ const clickComm = () => {
       alert('Operation finished with error: ' + response.error);
     }
   },'ORA_SVC_PHONE');
-  console.log('END COMM EVENT');
+  console.log('END NEW COMM EVENT');
+};
+
+const clickStartComm = () => {
+  var inData = {};
+  inData.SVCMCA_ANI = '5551234';
+  inData.SVCMCA_CONTACT_ID = '1234567890';
+  svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', '12345-1234-67890', inData, null, function (response) {
+    if (response.result == 'success') {
+      console.log('COMM RESPONSE: ',response);
+      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  },'ORA_SVC_PHONE');
+  console.log('END START COMM EVENT');
 };
 
 const clickConfigDocument = () => {
