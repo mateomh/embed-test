@@ -74,7 +74,7 @@ const clickConfig = () => {
   console.log('New config');
   const type ='ALL'
   // svcMca.tlb.api.getConfiguration(type, callback);
-  svcMca.tlb.api.getConfiguration('LOOKUP_OBJECTS', (configType, response) => {
+  svcMca.tlb.api.getConfiguration('FA_TOKEN', (configType, response) => {
     console.log('Config Type', configType);
 
     if (configType.result == 'success') 
