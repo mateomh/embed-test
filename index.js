@@ -138,7 +138,7 @@ const clickConfig = () => {
 };
 
 const clickFeature = () => {
-  svcMca.tlb.api.disableFeature('OUTBOUND_CALL', function (response) {
+  svcMca.tlb.api.disableFeature('CONFERENCE_CALL', function (response) {
     console.log(response);
     if (response.result == 'success') {
       console.log('Success! Feature disabled!');
