@@ -268,7 +268,7 @@ const clickStartComm = () => {
   inData.SVCMCA_CONTACT_ID = '1234567890';
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
-  svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', oldId, inData, null, function (response) {
+  svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
