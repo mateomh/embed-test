@@ -296,7 +296,7 @@ const clickGetCustomer = () => {
   const newId = 'aspect-bac'
   svcMca.tlb.api.getCustomerData('PHONE', 'ORA_SERVICE', newId, inData, null, (response) => {
     if (response.result == 'success') {
-      console.log("Response from Customer data", reponse);
+      console.log("Response from Customer data", response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
       console.log('Account:'+response.outData.SVCMCA_ORG_NAME+'('+response.outData.SVCMCA_ORG_ID+')');
       alert('Success! Results available in log.');
