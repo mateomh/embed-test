@@ -285,3 +285,22 @@ const clickStartComm = () => {
 const clickConfigDocument = () => {
   console.log('Official documentation actions');
 }
+
+const clickGetCustomer = () => {
+  var inData = {};
+  // inData.SVCMCA_ANI = '5551234';
+  inData.SVCMCA_ANI = '4579623';
+  // inData.SVCMCA_CONTACT_ID = '1234567890';
+  inData.SVCMCA_CONTACT_ID = '100000025811998';
+  const oldId = '12345-1234-67890'
+  const newId = 'aspect-bac'
+  svcMca.tlb.api.getCustomerData('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
+    if (response.result == 'success') {
+      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+      console.log('Account:'+response.outData.SVCMCA_ORG_NAME+'('+response.outData.SVCMCA_ORG_ID+')');
+      alert('Success! Results available in log.');
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  },'ORA_SVC_PHONE');
+}
