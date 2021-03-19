@@ -289,9 +289,9 @@ const clickConfigDocument = () => {
 const clickGetCustomer = () => {
   var inData = {};
   // inData.SVCMCA_ANI = '5551234';
-  // inData.SVCMCA_ANI = '4579623';
+  inData.SVCMCA_ANI = '4579623';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
-  inData.SVCMCA_CONTACT_ID = '100000025811998';
+  // inData.SVCMCA_CONTACT_ID = '100000025811998';
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
   svcMca.tlb.api.getCustomerData('PHONE', 'ORA_SERVICE', newId, inData, null, (response) => {
