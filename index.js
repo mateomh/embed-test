@@ -291,10 +291,10 @@ const clickGetCustomer = () => {
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_ANI = '4579623';
-  // inData.SVCMCA_CONTACT_ID = '100000025811998';
+  inData.SVCMCA_CONTACT_ID = '100000025811998';
   // inData.SVCMCA_CONTACT_FIRST_NAME = 'PN-4579623';
   // inData.SVCMCA_CONTACT_EMAIL = 'gvargas@baccredomatic.com';
-  inData.SVCMCA_CONTACT_LAST_NAME = 'PA-4579623';
+  // inData.SVCMCA_CONTACT_LAST_NAME = 'PA-4579623';
   // inData.SVCMCA_CONTACT_NUMBER = '174566';
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
