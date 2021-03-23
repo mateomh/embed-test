@@ -256,6 +256,7 @@ const clickComm = () => {
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
   inData.BAC_CONTACT_CIFBCO = userId;
+  inData.SVCMCA_INTERACTION_ID= 'aspect-bac';
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
