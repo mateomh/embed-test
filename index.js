@@ -289,13 +289,14 @@ const clickConfigDocument = () => {
 const clickGetCustomer = () => {
   let userId = document.getElementById('userid').value;
   if (userId === '' || userId ===undefined) {
-    userId = '100000025811998';
+    // userId = '100000025811998';
+    userId = '300000009591426';
   }
   var inData = {};
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_ANI = '4579623';
-  // inData.SVCMCA_CONTACT_ID = userId;
+  inData.SVCMCA_CONTACT_ID = userId;
   // inData.SVCMCA_CONTACT_FIRST_NAME = 'PN-4579623';
   // inData.SVCMCA_CONTACT_EMAIL = 'gvargas@baccredomatic.com';
   // inData.SVCMCA_CONTACT_LAST_NAME = 'PA-4579623';
