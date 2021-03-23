@@ -289,7 +289,8 @@ const clickConfigDocument = () => {
 const clickGetCustomer = () => {
   let userId = document.getElementById('userid').value;
   if (userId === '' || userId ===undefined) {
-    userId = '100000025811998';
+    // userId = '100000025811998';
+    userId = '42829685801'
     // userId = '300000009591426';
   }
   var inData = {};
@@ -301,7 +302,7 @@ const clickGetCustomer = () => {
   // inData.SVCMCA_CONTACT_EMAIL = 'gvargas@baccredomatic.com';
   // inData.SVCMCA_CONTACT_LAST_NAME = 'PA-4579623';
   // inData.SVCMCA_CONTACT_NUMBER = 'CR-204576-ALFAILEAO000';
-  inData.BAC_CONTACT_CIFBCO = '42829685801';
+  inData.BAC_CONTACT_CIFBCO = userId;
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
   svcMca.tlb.api.getCustomerData('PHONE', 'ORA_SERVICE', newId, inData, null, (response) => {
