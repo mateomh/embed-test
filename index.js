@@ -257,7 +257,10 @@ const clickReady = () => {
 const clickComm = () => {
   var inData = {};
   let userId = document.getElementById('userid').value;
-  console.log("USER CIF BCO");
+  console.log("USER CIF BCO", userId);
+  if (userId !== '') {
+    testinData.BAC_CONTACT_CIFBCO = userId;
+  }
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801'
@@ -287,7 +290,10 @@ const clickComm = () => {
 
 const clickStartComm = () => {
   var inData = {};
-  // let userId = document.getElementById('userid').value;
+  let userId = document.getElementById('userid').value;
+  if (userId !== '') {
+    testinData.BAC_CONTACT_CIFBCO = userId;
+  }
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801' // CIF BCO
@@ -319,11 +325,14 @@ const clickConfigDocument = () => {
 
 const clickGetCustomer = () => {
   let userId = document.getElementById('userid').value;
-  if (userId === '' || userId ===undefined) {
-    // userId = '100000025811998';
-    userId = '42829685801'
-    // userId = '300000009591426';
+  if (userId !== '') {
+    testinData.BAC_CONTACT_CIFBCO = userId;
   }
+  // if (userId === '' || userId ===undefined) {
+    // userId = '100000025811998';
+    // userId = '42829685801'
+    // userId = '300000009591426';
+  // }
   var inData = {};
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
