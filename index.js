@@ -2,13 +2,16 @@ const testinData = {
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
-  SVCMCA_CONTACT_ID: '300000004992660', // Fabian Prueba
-  // BAC_CONTACT_CIFBCO: '42829685801', // Fabian Prueba
+  // SVCMCA_CONTACT_ID: '300000004992660', // Fabian Prueba
+  BAC_CONTACT_CIFBCO: '42829685801', // Fabian Prueba
+  // BAC_CANTACT_CIFCOM: '428296858', // Fabian Prueba
   // SVCMCA_CONTACT_ID: '300000009591426', // Ileana Alfaro
-  BAC_CONTACT_CIFBCO: 'ALFAILEAO000', // Ileana Alfaro
+  // BAC_CONTACT_CIFBCO: 'ALFAILEAO000', // Ileana Alfaro
   // BAC_CANTACT_CIFCOM: 'ALFAILEAO000', // Ileana Alfaro
-  BAC_CANTACT_CIFCOM: '428296858', // Fabian Prueba
   // SVCMCA_BYPASS_IDENTIFY_CONTACT = true,
+  SVCMCA_CONTACT_ID: '',
+  // BAC_CONTACT_CIFBCO: '',
+  BAC_CANTACT_CIFCOM: '',
 };
 
 const newEventId = 'aspect-bac';
