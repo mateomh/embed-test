@@ -297,7 +297,7 @@ const clickStartComm = () => {
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
   // inData.BAC_CONTACT_CIFBCO = userId;
-  // inData.SVCMCA_BYPASS_IDENTIFY_CONTACT = true;
+  testinData.SVCMCA_BYPASS_IDENTIFY_CONTACT = true;
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
   // svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
