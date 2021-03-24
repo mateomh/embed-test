@@ -9,9 +9,9 @@ const testinData = {
   // BAC_CONTACT_CIFBCO: 'ALFAILEAO000', // Ileana Alfaro
   // BAC_CANTACT_CIFCOM: 'ALFAILEAO000', // Ileana Alfaro
   // SVCMCA_BYPASS_IDENTIFY_CONTACT = true,
-  SVCMCA_CONTACT_ID: '',
+  // SVCMCA_CONTACT_ID: '',
   // BAC_CONTACT_CIFBCO: '',
-  BAC_CANTACT_CIFCOM: '',
+  // BAC_CANTACT_CIFCOM: '',
 };
 
 const newEventId = 'aspect-bac';
