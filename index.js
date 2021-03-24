@@ -1,3 +1,13 @@
+const testinData = {
+  // inData.SVCMCA_ANI = '5551234';
+  // inData.SVCMCA_CONTACT_ID = '1234567890';
+  // inData.SVCMCA_CONTACT_ID = '100000025811998';
+  BAC_CONTACT_CIFBCO = '42829685801',
+  // SVCMCA_BYPASS_IDENTIFY_CONTACT = true,
+};
+
+const newEventId = 'aspect-bac';
+
 const clickButton = () => {
   console.log('click');
   window.dynamicLoadCompleted = false;
@@ -247,22 +257,23 @@ const clickReady = () => {
 const clickComm = () => {
   var inData = {};
   let userId = document.getElementById('userid').value;
-  if (userId === '' || userId ===undefined) {
+  console.log("USER CIF BCO");
+  // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
-    userId = '42829685801'
+    // userId = '42829685801'
     // userId = '300000009591426';
-  }
+  // }
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
-  inData.BAC_CONTACT_CIFBCO = userId;
-  inData.SVCMCA_INTERACTION_ID= 'aspect-bac';
+  // inData.BAC_CONTACT_CIFBCO = userId;
+  // inData.SVCMCA_INTERACTION_ID= 'aspect-bac';
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
-  svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
+  svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -276,20 +287,21 @@ const clickComm = () => {
 
 const clickStartComm = () => {
   var inData = {};
-  let userId = document.getElementById('userid').value;
-  if (userId === '' || userId ===undefined) {
+  // let userId = document.getElementById('userid').value;
+  // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
-    userId = '42829685801'
+    // userId = '42829685801' // CIF BCO
     // userId = '300000009591426';
-  }
+  // }
   // inData.SVCMCA_ANI = '5551234';
   // inData.SVCMCA_CONTACT_ID = '1234567890';
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
-  inData.BAC_CONTACT_CIFBCO = userId;
+  // inData.BAC_CONTACT_CIFBCO = userId;
   // inData.SVCMCA_BYPASS_IDENTIFY_CONTACT = true;
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
-  svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
+  // svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
+  svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -321,10 +333,10 @@ const clickGetCustomer = () => {
   // inData.SVCMCA_CONTACT_EMAIL = 'gvargas@baccredomatic.com';
   // inData.SVCMCA_CONTACT_LAST_NAME = 'PA-4579623';
   // inData.SVCMCA_CONTACT_NUMBER = 'CR-204576-ALFAILEAO000';
-  inData.BAC_CONTACT_CIFBCO = userId;
+  // inData.BAC_CONTACT_CIFBCO = userId;
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
-  svcMca.tlb.api.getCustomerData('PHONE', 'ORA_SERVICE', newId, inData, null, (response) => {
+  svcMca.tlb.api.getCustomerData('PHONE', 'ORA_SERVICE', newEventId, intestData, null, (response) => {
     if (response.result == 'success') {
       console.log("Response from Customer data", response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
