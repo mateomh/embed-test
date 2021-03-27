@@ -351,7 +351,7 @@ const clickCommEC = () => {
   // inData.SVCMCA_CONTACT_ID = '100000025811998';
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
-  svcMca.tlb.api.newCommEvent('Agencia 2', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
+  svcMca.tlb.api.newCommEvent('Agencia2', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -382,7 +382,7 @@ const clickStartCommEC = () => {
   const oldId = '12345-1234-67890'
   const newId = 'aspect-bac'
   // svcMca.tlb.api.startCommEvent('PHONE', 'ORA_SERVICE', newId, inData, null, function (response) {
-  svcMca.tlb.api.startCommEvent('Agencia 2', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
+  svcMca.tlb.api.startCommEvent('Agencia2', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
