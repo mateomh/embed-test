@@ -13,7 +13,7 @@ const testinData = {
   // BAC_CONTACT_CIFBCO: '',
   // BAC_CANTACT_CIFCOM: '',
   BAC_CONTACT_CIFBCO: '123456789',
-  SVCMCA_LEAD_NAME = 'LEAD CREADO DESDE ASPECT'
+  SVCMCA_LEAD_NAME: 'LEAD CREADO DESDE ASPECT'
 };
 
 const newEventId = 'aspect-bac';
