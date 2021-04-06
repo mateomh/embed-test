@@ -403,7 +403,8 @@ const clickGetCustomer = () => {
 const clickNewCommEventEC = () => {
   var inData = {};
 
-  svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+  // svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+    svcMca.tlb.api.newCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -424,7 +425,8 @@ const clickNewStartCommEventEC = () => {
     testinData.SVCMCA_LEAD_NAME='DATOS DE PROMOCION ENVIADOS DESDE TOOLBAR ASPECT';
   }
 
-  svcMca.tlb.api.startCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+  // svcMca.tlb.api.startCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+  svcMca.tlb.api.startCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -445,7 +447,8 @@ const clickNewEndCommEventEC = () => {
     testinData.BAC_CONTACT_CIFBCO = userId;
   }
       
-  svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
+  // svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
+  svcMca.tlb.api.closeCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
     if (response.result == 'success') {
       console.log('COMM END RESPONSE: ',response);
       //alert('Success! Call ended.');
