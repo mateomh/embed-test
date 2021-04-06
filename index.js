@@ -403,7 +403,7 @@ const clickGetCustomer = () => {
 const clickNewCommEventEC = () => {
   var inData = {};
 
-  svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+  svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
