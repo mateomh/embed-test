@@ -329,40 +329,6 @@ const clickStartComm = () => {
   console.log('WAIT FOR START COMM WINDOW POPUP');
 };
 
-const clickCommEC = () => {
-  var inData = {};
-  let userId = document.getElementById('userid').value;
-  console.log("USER CIF BCO", userId);
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-  }
-  // if (userId === '' || userId ===undefined) {
-    // userId = '100000025811998';
-    // userId = '42829685801'
-    // userId = '300000009591426';
-  // }
-  // inData.SVCMCA_ANI = '5551234';
-  // inData.SVCMCA_CONTACT_ID = '1234567890';
-  // inData.SVCMCA_CONTACT_ID = '100000025811998';
-  // inData.BAC_CONTACT_CIFBCO = userId;
-  // inData.SVCMCA_INTERACTION_ID= 'aspect-bac';
-  // inData.SVCMCA_ANI = '5551234';
-  // inData.SVCMCA_CONTACT_ID = '1234567890';
-  // inData.SVCMCA_CONTACT_ID = '100000025811998';
-  const oldId = '12345-1234-67890'
-  const newId = 'aspect-bac'
-  svcMca.tlb.api.newCommEvent('PHONE', 'ORA_SERVICE', newEventId, testinData, null, function (response) {
-    if (response.result == 'success') {
-      console.log('COMM RESPONSE: ',response);
-      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
-      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
-    } else {
-      alert('Operation finished with error: ' + response.error);
-    }
-  },'ORA_SVC_PHONE');
-  console.log('WAIT FOR NEW COMM EVENT RESPONSE');
-};
-
 const clickStartCommEC = () => {
   var inData = {};
   let userId = document.getElementById('userid').value;
@@ -430,4 +396,68 @@ const clickGetCustomer = () => {
       alert('Operation finished with error: ' + response.error);
     }
   },'ORA_SVC_PHONE');
+}
+
+
+
+const clickNewCommEventEC = () => {
+  var inData = {};
+  let userId = document.getElementById('userid').value;
+  console.log("USER CIF BCO", userId);
+  if (userId !== '') {
+    testinData.BAC_CONTACT_CIFBCO = userId;
+  }
+
+  svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+    if (response.result == 'success') {
+      console.log('COMM RESPONSE: ',response);
+      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  },'');
+  console.log('WAIT FOR NEW COMM EVENT RESPONSE');
+};
+
+
+const clickNewStartCommEventEC = () => {
+  var inData = {};
+  let userId = document.getElementById('userid').value;
+  if (userId !== '') {
+    testinData.BAC_CONTACT_CIFBCO = userId;
+    testinData.SVCMCA_LEAD_NAME='DATOS DE PROMOCION ENVIADOS DESDE TOOLBAR ASPECT';
+  }
+
+  svcMca.tlb.api.startCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+    if (response.result == 'success') {
+      console.log('COMM RESPONSE: ',response);
+      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  },'');
+  console.log('WAIT FOR START COMM WINDOW POPUP');
+};
+
+
+
+const clickNewEndCommEventEC = () => {
+      var inData = {};
+	  let userId = document.getElementById('userid').value;
+  	if (userId !== '') {
+    	testinData.BAC_CONTACT_CIFBCO = userId;
+  }
+      
+      svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
+        if (response.result == 'success') {
+          console.log('COMM END RESPONSE: ',response);
+          //alert('Success! Call ended.');
+        } else {
+          console.log('COMM END RESPONSE Operation finished with error: ',response.error);
+          //alert('Operation finished with error: ' + response.error);
+        }
+      },'');
+      console.log('WAIT FOR END COMM WINDOW POPUP');
 }
