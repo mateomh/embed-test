@@ -402,11 +402,6 @@ const clickGetCustomer = () => {
 
 const clickNewCommEventEC = () => {
   var inData = {};
-  let userId = document.getElementById('userid').value;
-  console.log("USER CIF BCO", userId);
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-  }
 
   svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
@@ -444,20 +439,20 @@ const clickNewStartCommEventEC = () => {
 
 
 const clickNewEndCommEventEC = () => {
-      var inData = {};
-	  let userId = document.getElementById('userid').value;
-  	if (userId !== '') {
-    	testinData.BAC_CONTACT_CIFBCO = userId;
+  var inData = {};
+	let userId = document.getElementById('userid').value;
+  if (userId !== '') {
+    testinData.BAC_CONTACT_CIFBCO = userId;
   }
       
-      svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
-        if (response.result == 'success') {
-          console.log('COMM END RESPONSE: ',response);
-          //alert('Success! Call ended.');
-        } else {
-          console.log('COMM END RESPONSE Operation finished with error: ',response.error);
-          //alert('Operation finished with error: ' + response.error);
-        }
-      },'');
-      console.log('WAIT FOR END COMM WINDOW POPUP');
+  svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
+    if (response.result == 'success') {
+      console.log('COMM END RESPONSE: ',response);
+      //alert('Success! Call ended.');
+    } else {
+      console.log('COMM END RESPONSE Operation finished with error: ',response.error);
+      //alert('Operation finished with error: ' + response.error);
+    }
+  },'');
+  console.log('WAIT FOR END COMM WINDOW POPUP');
 }
