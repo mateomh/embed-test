@@ -456,7 +456,8 @@ const clickNewEndCommEventEC = () => {
 const getBCOandCOM = () => {
   const bco = document.getElementById('BCO').value;
   const com = document.getElementById('COM').value;
-  
+  console.log("BCO: ", bco);
+  console.log("COM: ", com);
   testinData.BAC_CANTACT_CIFCOM = com;
   testinData.BAC_CONTACT_CIFBCO = bco;
 }
