@@ -267,11 +267,7 @@ const clickReady = () => {
 
 const clickComm = () => {
   var inData = {};
-  let userId = document.getElementById('userid').value;
-  console.log("USER CIF BCO", userId);
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-  }
+  getBCOandCOM();
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801'
@@ -301,10 +297,7 @@ const clickComm = () => {
 
 const clickStartComm = () => {
   var inData = {};
-  let userId = document.getElementById('userid').value;
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-  }
+  getBCOandCOM();
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801' // CIF BCO
@@ -332,10 +325,7 @@ const clickStartComm = () => {
 
 const clickStartCommEC = () => {
   var inData = {};
-  let userId = document.getElementById('userid').value;
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-  }
+  getBCOandCOM();
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801' // CIF BCO
