@@ -10,9 +10,10 @@ const testinData = {
   // BAC_CANTACT_CIFCOM: 'ALFAILEAO000', // Ileana Alfaro
   // SVCMCA_BYPASS_IDENTIFY_CONTACT = true,
   // SVCMCA_CONTACT_ID: '',
-  // BAC_CONTACT_CIFBCO: '',
-  // BAC_CANTACT_CIFCOM: '',
-  BAC_CONTACT_CIFBCO: '123456789',
+  BAC_CONTACT_CIFBCO: '',
+  BAC_CANTACT_CIFCOM: '',
+  // BAC_CONTACT_CIFBCO: '123456789',
+
   SVCMCA_LEAD_NAME: 'LEAD CREADO DESDE ASPECT'
 };
 
@@ -402,7 +403,7 @@ const clickGetCustomer = () => {
 
 const clickNewCommEventEC = () => {
   var inData = {};
-
+  getBCOandCOM();
   // svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     svcMca.tlb.api.newCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
@@ -419,11 +420,7 @@ const clickNewCommEventEC = () => {
 
 const clickNewStartCommEventEC = () => {
   var inData = {};
-  let userId = document.getElementById('userid').value;
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-    testinData.SVCMCA_LEAD_NAME='DATOS DE PROMOCION ENVIADOS DESDE TOOLBAR ASPECT';
-  }
+  getBCOandCOM();
 
   // svcMca.tlb.api.startCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
   svcMca.tlb.api.startCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
@@ -442,11 +439,7 @@ const clickNewStartCommEventEC = () => {
 
 const clickNewEndCommEventEC = () => {
   var inData = {};
-	let userId = document.getElementById('userid').value;
-  if (userId !== '') {
-    testinData.BAC_CONTACT_CIFBCO = userId;
-  }
-      
+	getBCOandCOM();  
   // svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
   svcMca.tlb.api.closeCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
     if (response.result == 'success') {
@@ -458,4 +451,12 @@ const clickNewEndCommEventEC = () => {
     }
   },'');
   console.log('WAIT FOR END COMM WINDOW POPUP');
+}
+
+const getBCOandCOM = () => {
+  const bco = document.getElementById('BCO').value;
+  const com = document.getElementById('COM').value;
+  
+  testinData.BAC_CANTACT_CIFCOM = com;
+  testinData.BAC_CONTACT_CIFBCO = bco;
 }
