@@ -441,6 +441,9 @@ const clickNewEndCommEventEC = () => {
     }
   },'');
   console.log('WAIT FOR END COMM WINDOW POPUP');
+  svcMca.tlb.api.onDataUpdated(channel,classification, (resp) => {
+    console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
+  }, channelType);
 }
 
 const getBCOandCOM = () => {
