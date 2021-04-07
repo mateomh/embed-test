@@ -441,9 +441,9 @@ const clickNewEndCommEventEC = () => {
     }
   },'');
   console.log('WAIT FOR END COMM WINDOW POPUP');
-  svcMca.tlb.api.onDataUpdated('CHAT','ORA_SERVICE', (resp) => {
-    console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
-  }, 'ORA_SVC_COBROWSE');
+  // svcMca.tlb.api.onDataUpdated('CHAT','ORA_SERVICE', (resp) => {
+  //   console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
+  // }, 'ORA_SVC_COBROWSE');
 }
 
 const getBCOandCOM = () => {
