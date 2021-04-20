@@ -450,10 +450,13 @@ const clickNewEndCommEventEC = () => {
 }
 
 const getBCOandCOM = () => {
-  const bco = document.getElementById('BCO').value;
-  const com = document.getElementById('COM').value;
-  console.log("BCO: ", bco);
-  console.log("COM: ", com);
-  testinData.BAC_CANTACT_CIFCOM = com;
-  testinData.BAC_CONTACT_CIFBCO = bco;
+  // const bco = document.getElementById('BCO').value;
+  // testinData.BAC_CANTACT_CIFCOM = com;
+  // console.log("BCO: ", bco);
+  // const com = document.getElementById('COM').value;
+  // testinData.BAC_CONTACT_CIFBCO = bco;
+  // console.log("COM: ", com);
+  const cn = document.getElementById('CONT_NUM').value;
+  testinData.SVCMCA_CONTACT_NUMBER = cn;
+  console.log("CONTACT NUMBER: ", cn);
 }
