@@ -270,7 +270,7 @@ const clickReady = () => {
 
 const clickComm = () => {
   var inData = {};
-  // getBCOandCOM();
+  getBCOandCOM();
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801'
@@ -300,7 +300,7 @@ const clickComm = () => {
 
 const clickStartComm = () => {
   var inData = {};
-  // getBCOandCOM();
+  getBCOandCOM();
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801' // CIF BCO
@@ -328,7 +328,7 @@ const clickStartComm = () => {
 
 const clickStartCommEC = () => {
   var inData = {};
-  // getBCOandCOM();
+  getBCOandCOM();
   // if (userId === '' || userId ===undefined) {
     // userId = '100000025811998';
     // userId = '42829685801' // CIF BCO
@@ -396,7 +396,7 @@ const clickGetCustomer = () => {
 
 const clickNewCommEventEC = () => {
   var inData = {};
-  // getBCOandCOM();
+  getBCOandCOM();
   // svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
   svcMca.tlb.api.newCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
@@ -413,7 +413,7 @@ const clickNewCommEventEC = () => {
 
 const clickNewStartCommEventEC = () => {
   var inData = {};
-  // getBCOandCOM();
+  getBCOandCOM();
 
   // svcMca.tlb.api.startCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
   svcMca.tlb.api.startCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
@@ -432,7 +432,7 @@ const clickNewStartCommEventEC = () => {
 
 const clickNewEndCommEventEC = () => {
   var inData = {};
-	// getBCOandCOM();  
+	getBCOandCOM();  
   // svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
   svcMca.tlb.api.closeCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
     if (response.result == 'success') {
