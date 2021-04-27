@@ -230,9 +230,11 @@ const agentCommandExecutor = (command) => {
 }
 
 const clickListeners = () => {
-  const channel = 'PHONE';
+  // const channel = 'PHONE';
+  const channel = 'CHAT';
   const classification = 'ORA_SERVICE';
-  const channelType = 'ORA_SVC_PHONE';
+  // const channelType = 'ORA_SVC_PHONE';
+  const channelType = 'ORA_SVC_CHAT';
   // ON DATA UPDATED
   svcMca.tlb.api.onDataUpdated(channel,classification, (resp) => {
     console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
