@@ -53,7 +53,7 @@ const clickNewEndCommEventEC = () => {
 const clickCheckUser = () => {
   getBCOandCOM();
 
-  svcMca.tlb.api.getCustomerData(channel, classification, newEventId, intestData, null, (response) => {
+  svcMca.tlb.api.getCustomerData(channel, classification, newEventId, testinData, null, (response) => {
     if (response.result == 'success') {
       console.log("Response from Customer data", response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
