@@ -58,7 +58,11 @@ const clickCheckUser = () => {
       console.log("Response from Customer data", response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
       console.log('Account:'+response.outData.SVCMCA_ORG_NAME+'('+response.outData.SVCMCA_ORG_ID+')');
-      alert('Success! Results available in log.');
+      console.log('Success! Results available in log.');
+
+      if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
+        console.log('Call the create prospect service');
+      }
     } else {
       alert('Operation finished with error: ' + response.error);
     }
