@@ -96,9 +96,9 @@ const clickCheckUser = () => {
         const response = await fetch(url, options);
         console.log('RESPONSE', response);
         const data = await response.json();
-        console.log('Data', data);
-        testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
-        clickNewCommEventEC();
+        console.log('Data', data.PartyNumber);
+        // testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
+        // clickNewCommEventEC();
       }
     } else {
       alert('Operation finished with error: ' + response.error);
