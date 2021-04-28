@@ -115,9 +115,7 @@ const getBCOandCOM = () => {
   // testinData.BAC_CONTACT_CIFBCO = bco;
   // console.log("COM: ", com);
   const cn = document.getElementById('CONT_NUM').value;
-  if (testinData.SVCMCA_CONTACT_NUMBER == '') {
-    testinData.SVCMCA_CONTACT_NUMBER = cn;
-  }
+  testinData.SVCMCA_CONTACT_NUMBER = cn;
   console.log("CONTACT NUMBER: ", cn);
 };
 
