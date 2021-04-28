@@ -1,3 +1,33 @@
+const url = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/contacts';
+
+const userInfo = {
+  "Type": "ZCA_PROSPECT",
+  "Country": "CR",
+  "FirstName": "ctiName 006",
+  "PersonDEO_SegundoNombre_c": "ctiName2 006",
+  "LastName": "ctiApellido 006",
+  "PersonDEO_SegundoApellido_c": "ctiApellido2 006",
+  "PersonDEO_NumeroIdentificacion_c": "123456789",
+  "PersonDEO_TipoIdentificacion360_c": "DNA",
+  "PersonDEO_GeneroKYC_c": "MASCULINO",
+  "PersonDEO_FechaNacimiento360_c": "20-01-2000",
+  "PersonDEO_TelefonoFijoKYC_c": "12222222",
+  "PersonDEO_TelefonoTrabajo_c": "22222222",
+  "PersonDEO_Celular360_c": "32222222",
+  "PersonDEO_CorreoElectronico_c": "COMprospect@prueba.com",
+  "PersonDEO_CorreoBCO360_c": "BCOprospect@prueba.com",
+  "PersonDEO_CorreoSEC360_c": "SECprospect@prueba.com"
+};
+
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+  },
+  body: JSON.stringify(userInfo)
+};
+
 const clickNewCommEventEC = () => {
   var inData = {};
   getBCOandCOM();
@@ -53,7 +83,7 @@ const clickNewEndCommEventEC = () => {
 const clickCheckUser = () => {
   getBCOandCOM();
 
-  svcMca.tlb.api.getCustomerData(channel, classification, newEventId, testinData, null, (response) => {
+  svcMca.tlb.api.getCustomerData(channel, classification, newEventId, testinData, null, async (response) => {
     if (response.result == 'success') {
       console.log("Response from Customer data", response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -62,6 +92,9 @@ const clickCheckUser = () => {
 
       if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
         console.log('Call the create prospect service');
+
+        const response = await fetch(url, options);
+        console.log('RESPONSE', response);
       }
     } else {
       alert('Operation finished with error: ' + response.error);
