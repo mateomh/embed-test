@@ -3,10 +3,10 @@ const url = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/lates
 const userInfo = {
   "Type": "ZCA_PROSPECT",
   "Country": "CR",
-  "FirstName": "ctiName 006",
+  "FirstName": "Mateo",
   "PersonDEO_SegundoNombre_c": "ctiName2 006",
-  "LastName": "ctiApellido 006",
-  "PersonDEO_SegundoApellido_c": "ctiApellido2 006",
+  "LastName": "Mojica",
+  "PersonDEO_SegundoApellido_c": "h",
   "PersonDEO_NumeroIdentificacion_c": "123456789",
   "PersonDEO_TipoIdentificacion360_c": "DNA",
   "PersonDEO_GeneroKYC_c": "MASCULINO",
