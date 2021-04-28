@@ -30,7 +30,7 @@ const options = {
 
 const clickNewCommEventEC = () => {
   var inData = {};
-  // getBCOandCOM();
+  getBCOandCOM();
   // svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
   svcMca.tlb.api.newCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
@@ -98,7 +98,7 @@ const clickCheckUser = () => {
         const data = await response.json();
         console.log('Data', data);
         testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
-        clickNewCommEventEC();
+        setBCOandCOM(data.PartyNumber);
       }
       // console.log('TEST DATA', testinData);
     } else {
@@ -115,6 +115,13 @@ const getBCOandCOM = () => {
   // testinData.BAC_CONTACT_CIFBCO = bco;
   // console.log("COM: ", com);
   const cn = document.getElementById('CONT_NUM').value;
-  testinData.SVCMCA_CONTACT_NUMBER = cn;
+  if (testinData.SVCMCA_CONTACT_NUMBER == '') {
+    testinData.SVCMCA_CONTACT_NUMBER = cn;
+  }
   console.log("CONTACT NUMBER: ", cn);
 };
+
+const setBCOandCOM = (value) => {
+  const cn = document.getElementById('CONT_NUM');
+  cn.value = value;
+}
