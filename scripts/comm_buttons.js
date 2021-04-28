@@ -97,6 +97,8 @@ const clickCheckUser = () => {
         console.log('RESPONSE', response);
         const data = await response.json();
         console.log('Data', data);
+        testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
+        clickNewCommEventEC();
       }
     } else {
       alert('Operation finished with error: ' + response.error);
