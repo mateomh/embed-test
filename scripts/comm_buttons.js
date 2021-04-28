@@ -95,6 +95,8 @@ const clickCheckUser = () => {
 
         const response = await fetch(url, options);
         console.log('RESPONSE', response);
+        const data = await response.json();
+        console.log('Data', data);
       }
     } else {
       alert('Operation finished with error: ' + response.error);
