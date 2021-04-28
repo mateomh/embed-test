@@ -30,7 +30,7 @@ const options = {
 
 const clickNewCommEventEC = () => {
   var inData = {};
-  getBCOandCOM();
+  // getBCOandCOM();
   // svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
   svcMca.tlb.api.newCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
@@ -98,9 +98,9 @@ const clickCheckUser = () => {
         const data = await response.json();
         console.log('Data', data);
         testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
-        // clickNewCommEventEC();
       }
       console.log('TEST DATA', testinData);
+      clickNewCommEventEC();
     } else {
       alert('Operation finished with error: ' + response.error);
     }
