@@ -14,7 +14,6 @@ const clickNewCommEventEC = () => {
   console.log('WAIT FOR NEW COMM EVENT RESPONSE');
 };
 
-
 const clickNewStartCommEventEC = () => {
   var inData = {};
   getBCOandCOM();
@@ -31,8 +30,6 @@ const clickNewStartCommEventEC = () => {
   },'');
   console.log('WAIT FOR START COMM WINDOW POPUP');
 };
-
-
 
 const clickNewEndCommEventEC = () => {
   var inData = {};
@@ -51,7 +48,22 @@ const clickNewEndCommEventEC = () => {
   // svcMca.tlb.api.onDataUpdated('CHAT','ORA_SERVICE', (resp) => {
   //   console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
   // }, 'ORA_SVC_COBROWSE');
-}
+};
+
+const clickCheckUser = () => {
+  getBCOandCOM();
+
+  svcMca.tlb.api.getCustomerData(channel, classification, newEventId, intestData, null, (response) => {
+    if (response.result == 'success') {
+      console.log("Response from Customer data", response);
+      console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
+      console.log('Account:'+response.outData.SVCMCA_ORG_NAME+'('+response.outData.SVCMCA_ORG_ID+')');
+      alert('Success! Results available in log.');
+    } else {
+      alert('Operation finished with error: ' + response.error);
+    }
+  },channelType);
+};
 
 const getBCOandCOM = () => {
   // const bco = document.getElementById('BCO').value;
@@ -63,4 +75,4 @@ const getBCOandCOM = () => {
   const cn = document.getElementById('CONT_NUM').value;
   testinData.SVCMCA_CONTACT_NUMBER = cn;
   console.log("CONTACT NUMBER: ", cn);
-}
+};

@@ -22,6 +22,10 @@ const testinData = {
 
 const newEventId = 'aspect-bac';
 
+const channel = 'CHAT';
+const channelType = 'ORA_SVC_CHAT';
+const classification = 'ORA_SERVICE';
+
 const getConfig = () => {
   const type ='ALL';
   svcMca.tlb.api.getConfiguration(type, (response) => {
