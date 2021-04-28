@@ -99,6 +99,7 @@ const clickCheckUser = () => {
         console.log('Data', data);
         testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
         setBCOandCOM(data.PartyNumber);
+        alert('New prospect created');
       }
       // console.log('TEST DATA', testinData);
     } else {
