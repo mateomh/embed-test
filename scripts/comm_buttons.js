@@ -29,23 +29,23 @@ const leadData = {
   "ContactPartyNumber": "CR-204576-ALFAILEAO000",
   "PrimaryInventoryItemNumber": "CR_TJC_V006",
   "Pais_c": "CR",
-  // "LeadsFormularioWebCollection_c":
-  // [
-  //     {
-  //         "Origen_c": "UnifiedIP",
-  //         "Nombre_c": "BENEFICIO",
-  //         "Valor_c": "25 Porciento",
-  //         "Descripcion_c": "taza minima",
-  //         "Comentario_c": "sugerir al cliente"
-  //     },
-  //     {
-  //         "Origen_c": "UnifiedIP",
-  //         "Nombre_c": "PLAZO",
-  //         "Valor_c": "12 meses",
-  //         "Descripcion_c": "plazo para el cliente",
-  //         "Comentario_c": "exclusivo con la oferta"
-  //     }
-  // ]
+  "LeadFormularioWebCollection_c":
+  [
+      {
+          "Origen_c": "UnifiedIP",
+          "Nombre_c": "BENEFICIO",
+          "Valor_c": "25 Porciento",
+          "Descripcion_c": "taza minima",
+          "Comentario_c": "sugerir al cliente"
+      },
+      {
+          "Origen_c": "UnifiedIP",
+          "Nombre_c": "PLAZO",
+          "Valor_c": "12 meses",
+          "Descripcion_c": "plazo para el cliente",
+          "Comentario_c": "exclusivo con la oferta"
+      }
+  ]
 }
 
 const optionsProspects = {
