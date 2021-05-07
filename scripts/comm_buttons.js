@@ -157,7 +157,7 @@ const clickLead = async () => {
   const response = await fetch(urlLeads, optionsLeads);
   console.log('RESPONSE Leads', response);
   const data = await response.json();
-  testinData.SVCMCA_LEAD_ID = data.LeadId;
+  // testinData.SVCMCA_LEAD_ID = data.LeadId;
   testinData.SVCMCA_LEAD_NUMBER = data.LeadNumber;
   console.log('Data Leads', data);
   alert('New lead created');
