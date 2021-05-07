@@ -23,29 +23,29 @@ const userInfo = {
 const leadData = {
   "Name": "TOOLBAR LEAD",
   "StatusCode": "UNQUALIFIED",
-  "CanalLead_c": "BAC_CTI",
-  "Fuente_c": "Unified IP",
+  // "CanalLead_c": "BAC_CTI",
+  // "Fuente_c": "Unified IP",
   "Description": "Prueba Creación Lead con TOOLBAR",
-  "ContactPartyNumber": "",
+  "ContactPartyNumber": "254574",
   "PrimaryInventoryItemNumber": "CR_TJC_V006",
   "Pais_c": "CR",
-  "LeadsFormularioWebCollection_c":
-  [
-      {
-          "Origen_c": "UnifiedIP",
-          "Nombre_c": "BENEFICIO",
-          "Valor_c": "25 Porciento",
-          "Descripcion_c": "taza minima",
-          "Comentario_c": "sugerir al cliente"
-      },
-      {
-          "Origen_c": "UnifiedIP",
-          "Nombre_c": "PLAZO",
-          "Valor_c": "12 meses",
-          "Descripcion_c": "plazo para el cliente",
-          "Comentario_c": "exclusivo con la oferta"
-      }
-  ]
+  // "LeadsFormularioWebCollection_c":
+  // [
+  //     {
+  //         "Origen_c": "UnifiedIP",
+  //         "Nombre_c": "BENEFICIO",
+  //         "Valor_c": "25 Porciento",
+  //         "Descripcion_c": "taza minima",
+  //         "Comentario_c": "sugerir al cliente"
+  //     },
+  //     {
+  //         "Origen_c": "UnifiedIP",
+  //         "Nombre_c": "PLAZO",
+  //         "Valor_c": "12 meses",
+  //         "Descripcion_c": "plazo para el cliente",
+  //         "Comentario_c": "exclusivo con la oferta"
+  //     }
+  // ]
 }
 
 const optionsProspects = {
@@ -139,7 +139,7 @@ const clickCheckUser = () => {
 };
 
 const clickLead = async () => {
-  getBCOandCOM();
+  // getBCOandCOM();
 
   const optionsLeads = {
     method: 'POST',
@@ -154,7 +154,6 @@ const clickLead = async () => {
   console.log('RESPONSE Leads', response);
   const data = await response.json();
   console.log('Data Leads', data);
-  testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
   setBCOandCOM(data.PartyNumber);
   alert('New lead created');
 }
