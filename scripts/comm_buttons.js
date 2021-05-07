@@ -26,7 +26,7 @@ const leadData = {
   // "CanalLead_c": "BAC_CTI",
   // "Fuente_c": "Unified IP",
   "Description": "Prueba Creación Lead con TOOLBAR",
-  "ContactPartyNumber": "254574",
+  "ContactPartyNumber": "CR-204576-ALFAILEAO000",
   "PrimaryInventoryItemNumber": "CR_TJC_V006",
   "Pais_c": "CR",
   // "LeadsFormularioWebCollection_c":
@@ -130,7 +130,9 @@ const clickCheckUser = () => {
         setBCOandCOM(data.PartyNumber);
         leadData.ContactPartyNumber = data.PartyNumber
         alert('New prospect created');
-      }
+      } 
+      
+      leadData.ContactPartyNumber = testinData.SVCMCA_CONTACT_NUMBER
       // console.log('TEST DATA', testinData);
     } else {
       alert('Operation finished with error: ' + response.error);
