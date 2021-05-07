@@ -29,7 +29,7 @@ const leadData = {
   "ContactPartyNumber": "CR-204576-ALFAILEAO000",
   "PrimaryInventoryItemNumber": "CR_TJC_V006",
   "Pais_c": "CR",
-  "LeadFormularioWebCollection_c":
+  "LeadsFormularioWebCollection_c":
   [
       {
           "Origen_c": "UnifiedIP",
