@@ -154,7 +154,6 @@ const clickLead = async () => {
   console.log('RESPONSE Leads', response);
   const data = await response.json();
   console.log('Data Leads', data);
-  setBCOandCOM(data.PartyNumber);
   alert('New lead created');
 }
 
