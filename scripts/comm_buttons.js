@@ -131,8 +131,9 @@ const clickCheckUser = () => {
         leadData.ContactPartyNumber = data.PartyNumber
         alert('New prospect created');
       } 
-      
+
       leadData.ContactPartyNumber = testinData.SVCMCA_CONTACT_NUMBER
+      console.log("LEADS", leadData);
       // console.log('TEST DATA', testinData);
     } else {
       alert('Operation finished with error: ' + response.error);
