@@ -1,12 +1,13 @@
-const url = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/contacts';
+const urlProspects = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/contacts';
+const urlLeads = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/leads/';
 
 const userInfo = {
   "Type": "ZCA_PROSPECT",
   "Country": "CR",
   "FirstName": "Mateo",
-  "PersonDEO_SegundoNombre_c": "ctiName2 006",
+  "MiddleName": "ctiName2 006",
   "LastName": "Mojica",
-  "PersonDEO_SegundoApellido_c": "h",
+  "SecondLastName": "h",
   "PersonDEO_NumeroIdentificacion_c": "123456789",
   "PersonDEO_TipoIdentificacion360_c": "DNA",
   "PersonDEO_GeneroKYC_c": "MASCULINO",
@@ -19,7 +20,35 @@ const userInfo = {
   "PersonDEO_CorreoSEC360_c": "SECprospect@prueba.com"
 };
 
-const options = {
+const leadData = {
+  "Name": "TOOLBAR LEAD",
+  "StatusCode": "UNQUALIFIED",
+  "CanalLead_c": "BAC_CTI",
+  "Fuente_c": "Unified IP",
+  "Description": "Prueba Creación Lead con TOOLBAR",
+  "ContactPartyNumber": "",
+  "PrimaryInventoryItemNumber": "CR_TJC_V006",
+  "Pais_c": "CR",
+  "LeadsFormularioWebCollection_c":
+  [
+      {
+          "Origen_c": "UnifiedIP",
+          "Nombre_c": "BENEFICIO",
+          "Valor_c": "25 Porciento",
+          "Descripcion_c": "taza minima",
+          "Comentario_c": "sugerir al cliente"
+      },
+      {
+          "Origen_c": "UnifiedIP",
+          "Nombre_c": "PLAZO",
+          "Valor_c": "12 meses",
+          "Descripcion_c": "plazo para el cliente",
+          "Comentario_c": "exclusivo con la oferta"
+      }
+  ]
+}
+
+const optionsProspects = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -93,12 +122,13 @@ const clickCheckUser = () => {
       if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
         console.log('Call the create prospect service');
 
-        const response = await fetch(url, options);
+        const response = await fetch(urlProspects, optionsProspects);
         console.log('RESPONSE', response);
         const data = await response.json();
         console.log('Data', data);
         testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
         setBCOandCOM(data.PartyNumber);
+        leadData.ContactPartyNumber = data.PartyNumber
         alert('New prospect created');
       }
       // console.log('TEST DATA', testinData);
@@ -107,6 +137,27 @@ const clickCheckUser = () => {
     }
   },channelType);
 };
+
+const clickLead = async () => {
+  getBCOandCOM();
+
+  const optionsLeads = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+    },
+    body: JSON.stringify(leadData)
+  }
+
+  const response = await fetch(urlLeads, optionsLeads);
+  console.log('RESPONSE Leads', response);
+  const data = await response.json();
+  console.log('Data Leads', data);
+  testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
+  setBCOandCOM(data.PartyNumber);
+  alert('New lead created');
+}
 
 const getBCOandCOM = () => {
   // const bco = document.getElementById('BCO').value;
