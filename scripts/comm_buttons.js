@@ -161,6 +161,8 @@ const clickLead = async () => {
   testinData.SVCMCA_LEAD_NUMBER = data.LeadNumber;
   console.log('Data Leads', data);
   alert('New lead created');
+  console.log('TESTINDATA', testinData);
+  console.log('LEADDATA', leadData);
 }
 
 const getBCOandCOM = () => {
