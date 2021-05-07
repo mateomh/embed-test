@@ -140,6 +140,7 @@ const clickCheckUser = () => {
 
 const clickLead = async () => {
   // getBCOandCOM();
+  console.log('CREATING LEAD');
 
   const optionsLeads = {
     method: 'POST',
