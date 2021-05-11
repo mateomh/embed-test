@@ -112,6 +112,7 @@ const registerListeners = () => {
   // ON DATA UPDATED
   svcMca.tlb.api.onDataUpdated(channel,classification, (resp) => {
     console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
+    alert ('Wrapup Info \n', JSON.stringify(resp, null, 2));
   }, channelType);
   // ON OUTGOING EVENT
   svcMca.tlb.api.onOutgoingEvent(channel,classification, (resp) => {
