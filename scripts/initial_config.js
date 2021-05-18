@@ -23,6 +23,8 @@ const testinData = {
   BAC_LEAD_DESCRIPTION: "Descripción de la Oferta del Lead desde Aspect"
 };
 
+let token = '';
+
 const newEventId = 'aspect-bac';
 
 const channel = 'CHAT';

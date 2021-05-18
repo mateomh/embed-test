@@ -1,6 +1,6 @@
 const urlProspects = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/contacts';
 const urlLeads = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/leads/';
-let token = '';
+
 
 const userInfo = {
   "Type": "ZCA_PROSPECT",
