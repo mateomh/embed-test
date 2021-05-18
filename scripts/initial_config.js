@@ -50,6 +50,7 @@ const getConfig = () => {
     if (response.result == 'success') 
     {			  
       console.log('getConfiguration is success. Response is: ', response);
+      token = response.configuration.faTrustToken;
     } 
     else 
     {

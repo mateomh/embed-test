@@ -1,6 +1,6 @@
 const urlProspects = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/contacts';
 const urlLeads = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/leads/';
-const token = '';
+let token = '';
 
 const userInfo = {
   "Type": "ZCA_PROSPECT",
@@ -53,7 +53,8 @@ const optionsProspects = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+    // 'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+    'Authorization': `Basic ${token}`
   },
   body: JSON.stringify(userInfo)
 };
@@ -123,6 +124,8 @@ const clickCheckUser = () => {
       if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
         console.log('Call the create prospect service');
 
+        console.log('OPTIONS PROSPECTS', optionsProspects);
+
         const response = await fetch(urlProspects, optionsProspects);
         console.log('RESPONSE', response);
         const data = await response.json();
@@ -154,7 +157,9 @@ const clickLead = async () => {
       'Authorization': `Basic ${token}`
     },
     body: JSON.stringify(leadData)
-  }
+  };
+
+  console.log('OPTIONS LEAD', optionsLeads);
 
   const response = await fetch(urlLeads, optionsLeads);
   console.log('RESPONSE Leads', response);
