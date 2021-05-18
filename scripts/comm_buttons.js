@@ -123,7 +123,7 @@ const clickCheckUser = () => {
       if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
         console.log('Call the create prospect service');
         console.log('FATOKEN', token);
-        optionsProspects.headers.Authorization= `Basic ${token}`;
+        optionsProspects.headers.Authorization= `Bearer ${token}`;
 
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
@@ -155,7 +155,7 @@ const clickLead = async () => {
     headers: {
       'Content-Type': 'application/json',
       // 'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
-      'Authorization': `Basic ${token}`
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify(leadData)
   };
