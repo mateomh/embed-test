@@ -45,7 +45,7 @@ const getConfig = () => {
   });
   const type2 ='FA_TOKEN';
   svcMca.tlb.api.getConfiguration(type2, (response) => {
-    console.log('Token Config', response.configuration);
+    console.log('Token Config', response.configuration.faTrustToken);
 
     if (response.result == 'success') 
     {			  
