@@ -122,6 +122,8 @@ const clickCheckUser = () => {
 
       if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
         console.log('Call the create prospect service');
+        console.log('FATOKEN', token);
+        optionsProspects.headers.Authorization= `Basic ${token}`;
 
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
