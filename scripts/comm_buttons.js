@@ -1,5 +1,6 @@
 const urlProspects = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/contacts';
 const urlLeads = 'https://ccur-dev1.fa.us6.oraclecloud.com/crmRestApi/resources/latest/leads/';
+const token = '';
 
 const userInfo = {
   "Type": "ZCA_PROSPECT",
@@ -149,7 +150,8 @@ const clickLead = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+      // 'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+      'Authorization': `Basic ${token}`
     },
     body: JSON.stringify(leadData)
   }

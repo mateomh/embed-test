@@ -43,19 +43,19 @@ const getConfig = () => {
       alert('Could not getConfiguration. finished with error: ' + response.error);
     }
   });
-  // const type2 ='FA_TOKEN';
-  // svcMca.tlb.api.getConfiguration(type2, (response) => {
-  //   console.log('Token Config', response);
+  const type2 ='FA_TOKEN';
+  svcMca.tlb.api.getConfiguration(type2, (response) => {
+    console.log('Token Config', response);
 
-  //   if (response.result == 'success') 
-  //   {			  
-  //     console.log('getConfiguration is success. Response is: ', response);
-  //   } 
-  //   else 
-  //   {
-  //     alert('Could not getConfiguration. finished with error: ' + response.error);
-  //   }
-  // });
+    if (response.result == 'success') 
+    {			  
+      console.log('getConfiguration is success. Response is: ', response);
+    } 
+    else 
+    {
+      alert('Could not getConfiguration. finished with error: ' + response.error);
+    }
+  });
   console.log('WAIT FOR CONFIG RESPONSE');
 };
 
