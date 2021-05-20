@@ -114,8 +114,8 @@ const registerListeners = () => {
   const classification = 'ORA_SERVICE';
   // ON DATA UPDATED
   svcMca.tlb.api.onDataUpdated(channel,classification, (resp) => {
+    alert (`Wrapup Info \n${resp.outData.BAC_WRAPUP_CALLBACK_DATE}`);
     console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
-    alert (`Wrapup Info \n${resp.outData}`);
   }, channelType);
   // ON OUTGOING EVENT
   svcMca.tlb.api.onOutgoingEvent(channel,classification, (resp) => {
