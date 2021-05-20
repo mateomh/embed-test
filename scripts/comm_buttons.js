@@ -63,7 +63,7 @@ const clickNewCommEventEC = () => {
   var inData = {};
   getBCOandCOM();
   // svcMca.tlb.api.newCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
-  svcMca.tlb.api.newCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+  svcMca.tlb.api.newCommEvent(channel, 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -72,7 +72,7 @@ const clickNewCommEventEC = () => {
     } else {
       alert('Operation finished with error: ' + response.error);
     }
-  },'');
+  },channelType);
   console.log('WAIT FOR NEW COMM EVENT RESPONSE');
 };
 
@@ -81,7 +81,7 @@ const clickNewStartCommEventEC = () => {
   getBCOandCOM();
 
   // svcMca.tlb.api.startCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
-  svcMca.tlb.api.startCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
+  svcMca.tlb.api.startCommEvent(channel, 'ORA_SERVICE', '123456789000', testinData, null, function (response) {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
@@ -89,7 +89,7 @@ const clickNewStartCommEventEC = () => {
     } else {
       alert('Operation finished with error: ' + response.error);
     }
-  },'');
+  },channelType);
   console.log('WAIT FOR START COMM WINDOW POPUP');
 };
 
@@ -97,7 +97,7 @@ const clickNewEndCommEventEC = () => {
   var inData = {};
 	getBCOandCOM();  
   // svcMca.tlb.api.closeCommEvent('CO-BROWSE', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
-  svcMca.tlb.api.closeCommEvent('CHAT', 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
+  svcMca.tlb.api.closeCommEvent(channel, 'ORA_SERVICE', '123456789000', testinData, 'WRAPUP', function (response) {
     if (response.result == 'success') {
       console.log('COMM END RESPONSE: ',response);
       //alert('Success! Call ended.');
@@ -105,7 +105,7 @@ const clickNewEndCommEventEC = () => {
       console.log('COMM END RESPONSE Operation finished with error: ',response.error);
       //alert('Operation finished with error: ' + response.error);
     }
-  },'');
+  },channelType);
   console.log('WAIT FOR END COMM WINDOW POPUP');
   // svcMca.tlb.api.onDataUpdated('CHAT','ORA_SERVICE', (resp) => {
   //   console.log('THIS IS THE DATA UPDATED CALLBACK', resp);
