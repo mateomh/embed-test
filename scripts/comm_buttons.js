@@ -48,6 +48,15 @@ const leadData = {
   ]
 }
 
+const optionsProspects = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify(userInfo)
+};
+
 
 
 const clickNewCommEventEC = () => {
@@ -117,14 +126,14 @@ const clickCheckUser = () => {
         console.log('Call the create prospect service');
         // getCountry();
 
-        const optionsProspects = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify(userInfo)
-        };
+        // const optionsProspects = {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //     'Authorization': `Bearer ${token}`
+        //   },
+        //   body: JSON.stringify(userInfo)
+        // };
 
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
