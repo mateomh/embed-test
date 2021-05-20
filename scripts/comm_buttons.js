@@ -124,18 +124,18 @@ const clickCheckUser = () => {
 
       if (response.outData.SVCMCA_CONTACT_ID === undefined) {
         console.log('Call the create prospect service');
-        // getCountry();
+        getCountry();
 
-        // const optionsProspects = {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //     'Authorization': `Bearer ${token}`
-        //   },
-        //   body: JSON.stringify(userInfo)
-        // };
+        const optionsProspects = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(userInfo)
+        };
 
-        optionsProspects.headers.Authorization = `Bearer ${token}`;
+        // optionsProspects.headers.Authorization = `Bearer ${token}`;
 
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
