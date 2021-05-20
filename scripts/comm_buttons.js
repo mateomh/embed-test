@@ -48,15 +48,7 @@ const leadData = {
   ]
 }
 
-const optionsProspects = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    // 'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
-    'Authorization': `Basic ${token}`
-  },
-  body: JSON.stringify(userInfo)
-};
+
 
 const clickNewCommEventEC = () => {
   var inData = {};
@@ -124,7 +116,18 @@ const clickCheckUser = () => {
         console.log('Call the create prospect service');
         console.log('FATOKEN', token);
         getCountry();
-        optionsProspects.headers.Authorization= `Bearer ${token}`;
+
+        const optionsProspects = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(userInfo)
+        };
+
+        // optionsProspects.headers.Authorization= `Bearer ${token}`;
 
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
@@ -199,3 +202,7 @@ const setBCOandCOM = (value) => {
   const cn = document.getElementById('CONT_NUM');
   cn.value = value;
 }
+
+const setOptions = () => {
+
+};
