@@ -112,10 +112,10 @@ const agentCommandExecutor = (command) => {
 const registerListeners = () => {
   // const channel = 'PHONE';
   // const channelType = 'ORA_SVC_PHONE';
-  const channel = 'CHAT';
-  const channelType = 'ORA_SVC_CHAT';
+  // const channel = 'CHAT';
+  // const channelType = 'ORA_SVC_CHAT';
   
-  const classification = 'ORA_SERVICE';
+  // const classification = 'ORA_SERVICE';
   // ON DATA UPDATED
   svcMca.tlb.api.onDataUpdated(channel,classification, (resp) => {
     alert (`Wrapup Callback date \n${resp.outData.BAC_WRAPUP_CALLBACK_DATE}`);
