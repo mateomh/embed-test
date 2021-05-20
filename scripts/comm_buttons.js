@@ -135,6 +135,8 @@ const clickCheckUser = () => {
         //   body: JSON.stringify(userInfo)
         // };
 
+        optionsProspects.headers.Authorization = `Bearer ${token}`;
+
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
         const response = await fetch(urlProspects, optionsProspects).catch(err => console.log("ERROR MESSAGE", err));
