@@ -123,6 +123,7 @@ const clickCheckUser = () => {
       if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
         console.log('Call the create prospect service');
         console.log('FATOKEN', token);
+        getCountry();
         optionsProspects.headers.Authorization= `Bearer ${token}`;
 
         console.log('OPTIONS PROSPECTS', optionsProspects);
@@ -183,6 +184,15 @@ const getBCOandCOM = () => {
   const cn = document.getElementById('CONT_NUM').value;
   testinData.SVCMCA_CONTACT_NUMBER = cn;
   console.log("CONTACT NUMBER: ", cn);
+};
+
+const getCountry = () => {
+  const country = document.getElementById('country').value;
+  userInfo.Country = country;
+  leadData.Pais_c = country;
+  console.log("USER COUNTRY", userInfo.Country);
+  console.log("LEAD DATA", leadData.Pais_c);
+
 };
 
 const setBCOandCOM = (value) => {
