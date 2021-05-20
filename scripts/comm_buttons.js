@@ -181,6 +181,11 @@ const clickLead = async () => {
   console.log('OPTIONS LEAD', optionsLeads);
 
   const response = await fetch(urlLeads, optionsLeads).catch(err => console.log("ERROR MESSAGE", err));
+  if (response.status === 400) {
+    console.log(response.text());
+    alert("Can't create the lead");
+    return;
+  }
   console.log('RESPONSE Leads', response);
   const data = await response.json();
   testinData.SVCMCA_LEAD_ID = `${data.LeadId}`;
