@@ -146,7 +146,7 @@ const clickCheckUser = () => {
       leadData.ContactPartyNumber = testinData.SVCMCA_CONTACT_NUMBER
       console.log("LEADS", leadData);
       // console.log('TEST DATA', testinData);
-      clickLead();
+      // clickLead();
     } else {
       alert('Operation finished with error: ' + response.error);
     }
