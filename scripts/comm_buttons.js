@@ -122,17 +122,14 @@ const clickCheckUser = () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': 'Basic ZXNhbmFicmlhc2FsOkNyZWRvbWF0aWMxMw=='
             'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify(userInfo)
         };
 
-        // optionsProspects.headers.Authorization= `Bearer ${token}`;
-
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
-        const response = await fetch(urlProspects, optionsProspects);
+        const response = await fetch(urlProspects, optionsProspects).catch(err => console.log("ERROR MESSAGE", err));
         console.log('RESPONSE', response);
         const data = await response.json();
         console.log('Data', data);
@@ -168,7 +165,7 @@ const clickLead = async () => {
 
   console.log('OPTIONS LEAD', optionsLeads);
 
-  const response = await fetch(urlLeads, optionsLeads);
+  const response = await fetch(urlLeads, optionsLeads).catch(err => console.log("ERROR MESSAGE", err));
   console.log('RESPONSE Leads', response);
   const data = await response.json();
   testinData.SVCMCA_LEAD_ID = `${data.LeadId}`;
