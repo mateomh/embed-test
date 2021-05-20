@@ -115,7 +115,7 @@ const clickCheckUser = () => {
 
       if (response.outData.SVCMCA_CONTACT_ID === undefined) {
         console.log('Call the create prospect service');
-        getCountry();
+        // getCountry();
 
         const optionsProspects = {
           method: 'POST',
