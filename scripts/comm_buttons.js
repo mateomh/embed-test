@@ -142,6 +142,7 @@ const clickCheckUser = () => {
         const response = await fetch(urlProspects, optionsProspects).catch(err => console.log("ERROR MESSAGE", err));
         if (response.status === 400) {
           console.log(response.text());
+          alert("Can't create the prospect");
           return;
         }
         console.log('RESPONSE', response);
@@ -156,7 +157,7 @@ const clickCheckUser = () => {
       leadData.ContactPartyNumber = testinData.SVCMCA_CONTACT_NUMBER
       console.log("LEADS", leadData);
       // console.log('TEST DATA', testinData);
-      // clickLead();
+      clickLead();
     } else {
       alert('Operation finished with error: ' + response.error);
     }
