@@ -113,9 +113,8 @@ const clickCheckUser = () => {
       console.log('Account:'+response.outData.SVCMCA_ORG_NAME+'('+response.outData.SVCMCA_ORG_ID+')');
       console.log('Success! Results available in log.');
 
-      if (response.outData.BAC_CANTACT_CIFCOM === '' && response.outData.BAC_CONTACT_CIFBCO === '') {
+      if (response.outData.SVCMCA_CONTACT_ID === '' && response.outData.SVCMCA_CONTACT_ID === undefined) {
         console.log('Call the create prospect service');
-        console.log('FATOKEN', token);
         getCountry();
 
         const optionsProspects = {
