@@ -131,7 +131,8 @@ const clickCheckUser = () => {
 
         const response = await fetch(urlProspects, optionsProspects).catch(err => console.log("ERROR MESSAGE", err));
         if (response.status === 400) {
-          console.log(response.text.result);
+          console.log(response.text());
+          return;
         }
         console.log('RESPONSE', response);
         const data = await response.json();
