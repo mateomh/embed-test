@@ -27,8 +27,12 @@ let token = '';
 
 const newEventId = 'aspect-bac';
 
-const channel = 'CHAT';
-const channelType = 'ORA_SVC_CHAT';
+// const channel = 'CHAT';
+// const channelType = 'ORA_SVC_CHAT';
+// const classification = 'ORA_SERVICE';
+
+const channel = 'PHONE';
+const channelType = 'ORA_SVC_PHONE';
 const classification = 'ORA_SERVICE';
 
 const getConfig = () => {

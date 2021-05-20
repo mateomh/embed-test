@@ -48,14 +48,14 @@ const leadData = {
   ]
 }
 
-const optionsProspects = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
-  },
-  body: JSON.stringify(userInfo)
-};
+// const optionsProspects = {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer ${token}`
+//   },
+//   body: JSON.stringify(userInfo)
+// };
 
 
 
