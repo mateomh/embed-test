@@ -167,6 +167,7 @@ const clickCheckUser = () => {
 const clickLead = async () => {
   // getBCOandCOM();
   console.log('CREATING LEAD');
+  getCountry();
 
   const optionsLeads = {
     method: 'POST',
