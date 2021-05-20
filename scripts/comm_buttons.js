@@ -27,7 +27,7 @@ const leadData = {
   // "Fuente_c": "Unified IP",
   "Description": "Prueba Creación Lead con TOOLBAR",
   "ContactPartyNumber": "CR-204576-ALFAILEAO000",
-  "PrimaryInventoryItemNumber": "CR_TJC_V006",
+  // "PrimaryInventoryItemNumber": "CR_TJC_V006",
   "Pais_c": "CR",
   "LeadsFormularioWebCollection_c":
   [
