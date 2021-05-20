@@ -130,6 +130,9 @@ const clickCheckUser = () => {
         console.log('OPTIONS PROSPECTS', optionsProspects);
 
         const response = await fetch(urlProspects, optionsProspects).catch(err => console.log("ERROR MESSAGE", err));
+        if (response.status === 400) {
+          console.log(response.text);
+        }
         console.log('RESPONSE', response);
         const data = await response.json();
         console.log('Data', data);
