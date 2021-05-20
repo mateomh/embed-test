@@ -58,7 +58,8 @@ const clickNewCommEventEC = () => {
     if (response.result == 'success') {
       console.log('COMM RESPONSE: ',response);
       console.log('Customer: '+response.outData.SVCMCA_CONTACT_NAME +' ('+response.outData.SVCMCA_CONTACT_ID +')');
-      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');					  
+      console.log('Account: '+response.outData.SVCMCA_ORG_NAME +' ('+response.outData.SVCMCA_ORG_ID +')');
+      clickNewStartCommEventEC();					  
     } else {
       alert('Operation finished with error: ' + response.error);
     }
@@ -144,6 +145,7 @@ const clickCheckUser = () => {
       leadData.ContactPartyNumber = testinData.SVCMCA_CONTACT_NUMBER
       console.log("LEADS", leadData);
       // console.log('TEST DATA', testinData);
+      clickLead();
     } else {
       alert('Operation finished with error: ' + response.error);
     }
@@ -175,6 +177,7 @@ const clickLead = async () => {
   alert(`New lead created with id: ${data.LeadId}`);
   console.log('TESTINDATA', testinData);
   console.log('LEADDATA', leadData);
+  clickNewCommEventEC();
 }
 
 const getBCOandCOM = () => {
