@@ -145,7 +145,7 @@ const clickCheckUser = () => {
           alert("Can't create the prospect");
           return;
         }
-        console.log('RESPONSE', response);
+        console.log('RESPONSE', response.headers.location);
         const data = await response.json();
         console.log('Data', data);
         testinData.SVCMCA_CONTACT_NUMBER = data.PartyNumber;
